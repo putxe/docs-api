@@ -5,6 +5,8 @@ info:
 tags:
   - name: Utils
     description: API related endpoints.
+servers:
+  - url: https://api.example.com
 paths:
   "/":
     get:

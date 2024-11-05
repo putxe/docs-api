@@ -4,6 +4,11 @@
     "title": "API example",
     "version": "1.0.0"
   },
+  "servers": [
+    {
+      "url": "https://api.example.com"
+    }
+  ],
   "tags": [
     {
       "name": "Utils",
