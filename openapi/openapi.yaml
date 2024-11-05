@@ -1,23 +1,28 @@
 openapi: 3.0.3
-info: 
+info:
   title: API example
   version: 1.0.0
-paths:  
+tags:
+  - name: Utils
+    description: API related endpoints.
+paths:
   "/":
-    get: 
+    get:
       summary: Get the API root
       description: Returns the API welcome message.
       operationId: getRoot
+      tags:
+        - Utils
       responses:
-        '200': 
+        "200":
           description: OK
           content:
-            application/json: 
-              schema: 
+            application/json:
+              schema:
                 type: object
-                required: 
+                required:
                   - message
                 properties:
-                  message: 
+                  message:
                     description: Welcome message
                     type: string

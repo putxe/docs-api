@@ -26,20 +26,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.ts"),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
           docItemComponent: "@theme/ApiItem", // Derived from docusaurus-theme-openapi
-        },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-          onInlineAuthors: "ignore",
-          onUntruncatedBlogPosts: "ignore",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -63,16 +50,9 @@ const config: Config = {
         },
         items: [
           {
-            type: "doc",
-            docId: "intro",
+            label: "API reference",
             position: "left",
-            label: "Tutorial",
-          },
-          { to: "/blog", label: "Blog", position: "left" },
-          {
-            label: "Petstore API",
-            position: "left",
-            to: "/docs/category/petstore-api",
+            to: "/docs/reference",
           },
           {
             href: "https://github.com/facebook/docusaurus",
@@ -88,8 +68,8 @@ const config: Config = {
             title: "Docs",
             items: [
               {
-                label: "Tutorial",
-                to: "/docs/intro",
+                label: "API reference",
+                to: "/docs/reference",
               },
             ],
           },
@@ -129,61 +109,21 @@ const config: Config = {
       prism: {
         prism: {
           additionalLanguages: [
-            "ruby",
-            "csharp",
-            "php",
-            "java",
-            "powershell",
             "json",
             "bash",
           ],
         },
         languageTabs: [
           {
-            highlight: "python",
-            language: "python",
-            logoClass: "python",
-          },
-          {
             highlight: "bash",
             language: "curl",
             logoClass: "bash",
           },
-          {
-            highlight: "csharp",
-            language: "csharp",
-            logoClass: "csharp",
-          },
-          {
-            highlight: "go",
-            language: "go",
-            logoClass: "go",
-          },
+        
           {
             highlight: "javascript",
             language: "nodejs",
             logoClass: "nodejs",
-          },
-          {
-            highlight: "ruby",
-            language: "ruby",
-            logoClass: "ruby",
-          },
-          {
-            highlight: "php",
-            language: "php",
-            logoClass: "php",
-          },
-          {
-            highlight: "java",
-            language: "java",
-            logoClass: "java",
-            variant: "unirest",
-          },
-          {
-            highlight: "powershell",
-            language: "powershell",
-            logoClass: "powershell",
           },
         ],
       },
@@ -197,10 +137,10 @@ const config: Config = {
         docsPluginId: "classic",
         config: {
           petstore: {
-            specPath: "examples/petstore.yaml",
-            outputDir: "docs/petstore",
+            specPath: "static/openapi.json",
+            outputDir: "docs/reference",
             downloadUrl:
-              "https://raw.githubusercontent.com/PaloAltoNetworks/docusaurus-template-openapi-docs/main/examples/petstore.yaml",
+              "https://raw.githubusercontent.com/putxe/docs-api/main/openapi/openapi.yaml",
             sidebarOptions: {
               groupPathsBy: "tag",
               categoryLinkSource: "tag",
